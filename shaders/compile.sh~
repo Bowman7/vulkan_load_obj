@@ -1,0 +1,5 @@
+#!/bin/bash
+
+/usr/local/bin/glslc shader2.vert -o vert.spv
+/usr/local/bin/glslc shader2.frag -o frag.spv
+/usr/local/bin/glslc *.comp -o compute.spv

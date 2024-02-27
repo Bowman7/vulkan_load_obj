@@ -1,0 +1,24 @@
+#ifndef FUNC_H
+#define FUNC_H
+
+void checkRequiredExtension(std::vector<VkExtensionProperties>extensions,const char** glfwExtensions,uint32_t glfwExtensionCount)
+{
+  for(auto i = 0;i<glfwExtensionCount;i++)
+    {
+      bool found =false;
+      for(const VkExtensionProperties& extension: extensions)
+	{
+	  if(strcmp(glfwExtensions[i],extension.extensionName))
+	    {
+	      found ==true;
+	    }
+	}
+      if(!found)
+	{
+	  throw std::runtime_error("MISSING VULKAN EXTENSION.\n");
+	}
+    }
+  std::cout<<"EXTENSIONS ARE PRESENT"<<std::endl;
+}
+
+#endif
